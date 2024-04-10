@@ -151,12 +151,14 @@ export default {
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
 
-.product-page .container{
-    padding-top: 50px;
-}
+.product-page {
+    .container{
+        padding-top: 50px;
+    }
 
-.product-page .row {
-    margin-top: 40px;
+    .row {
+        margin-top: 40px;
+    }
 }
 
 .product-photo {

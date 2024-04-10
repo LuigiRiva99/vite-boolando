@@ -36,11 +36,19 @@ export default {
 </template>
 
 <style scoped>
-.footer-bar .row{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0px;
+
+.footer-bar{
+    background-color: #1A1A1A;
+    color: white;
+    margin-top: 20px;
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0px;
+    }
 }
+
 
 .socials, .company{
     display: flex;
@@ -55,12 +63,6 @@ export default {
     display: flex;
     margin-top: 10px;
     gap: 15px;
-}
-
-.footer-bar{
-    background-color: #1A1A1A;
-    color: white;
-    margin-top: 20px;
 }
 
 .company-info {
