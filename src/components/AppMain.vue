@@ -224,4 +224,8 @@ h5 {
     font-weight: bold;
     font-size: 15px;
 }
+
+.brand-name, .og-price, .price{
+    font-size: 13px;
+}
 </style>
