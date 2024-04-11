@@ -2,11 +2,11 @@
 import AppCard from './AppCard.vue'
 
 export default {
+    components : {
+        AppCard
+    },
     data() {
         return {
-            components : {
-                AppCard
-            },
             "products": [
                 {
                     "id": 1,
@@ -268,75 +268,5 @@ export default {
     .row {
         margin-top: 40px;
     }
-}
-
-.product-photo {
-    position: relative;
-}
-
-.product-flags{
-    display: flex;
-    position: absolute;
-    bottom: 50px;
-    left: 0px;
-    gap: 10px;
-    z-index: 999;
-}
-
-.favourites {
-    position: absolute;
-    top: 10px;
-    right: 0px;
-    background-color: white;
-    font-size: 25px;
-    padding: 5px 15px;
-}
-
-.discount, .label{
-    padding: 3px 10px;
-    color: white;
-}
-
-.discount {
-    background-color: $red;
-}
-
-.label {
-    background-color: $green;
-}
-
-.price{
-    color: $red;
-    font-weight: bold;
-}
-
-.og-price {
-    color: black;
-}
-
-.overlay {
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-.product-item:hover .overlay{
-    opacity: 1;
-}
-
-.favourites:hover{
-    color: $red;
-}
-
-h5 {
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.brand-name, .og-price, .price{
-    font-size: 13px;
 }
 </style>
