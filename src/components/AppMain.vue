@@ -1,8 +1,116 @@
 <script>
+import AppCard from './AppCard.vue'
+
 export default {
     data() {
         return {
-            
+            components : {
+                AppCard
+            },
+            "products": [
+                {
+                    "id": 1,
+                    "frontImage": "1.webp",
+                    "backImage": "1b.webp",
+                    "brand": "Levi's",
+                    "name": "Relaxed Fit",
+                    "price": 29.99,
+                    "isInFavorites": true,
+                    "badges": [
+                        {
+                            "type": "tag",
+                            "value": "Sostenibilità"
+                        },
+                        {
+                            "type": "discount",
+                            "value": "-50%"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "frontImage": "2.webp",
+                    "backImage": "2b.webp",
+                    "brand": "Guess",
+                    "name": "Roses Tee",
+                    "price": 20.99,
+                    "isInFavorites": true,
+                    "badges": [
+                        {
+                            "type": "discount",
+                            "value": "-30%"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "frontImage": "3.webp",
+                    "backImage": "3b.webp",
+                    "brand": "Come Zucchero Filato",
+                    "name": "Voglia di colori pastello",
+                    "price": 129.99,
+                    "isInFavorites": false,
+                    "badges": [
+                        {
+                            "type": "discount",
+                            "value": "-30%"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "frontImage": "4.webp",
+                    "backImage": "4b.webp",
+                    "brand": "Levi's",
+                    "name": "Tee Unisex",
+                    "price": 14.99,
+                    "isInFavorites": false,
+                    "badges": [
+                        {
+                            "type": "tag",
+                            "value": "Sostenibilità"
+                        },
+                        {
+                            "type": "discount",
+                            "value": "-50%"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "frontImage": "5.webp",
+                    "backImage": "5b.webp",
+                    "brand": "Maya Deluxe",
+                    "name": "Stripe Bodice",
+                    "price": 99.99,
+                    "isInFavorites": true,
+                    "badges": [
+                        {
+                            "type": "tag",
+                            "value": "Sostenibilità"
+                        },
+                        {
+                            "type": "discount",
+                            "value": "-50%"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "frontImage": "6.webp",
+                    "backImage": "6b.webp",
+                    "brand": "Esprit",
+                    "name": "Maglione - Black",
+                    "price": 29.99,
+                    "isInFavorites": true,
+                    "badges": [
+                        {
+                            "type": "tag",
+                            "value": "Sostenibilità"
+                        }
+                    ]
+                }
+            ]
         }
     }
 }
@@ -13,12 +121,13 @@ export default {
         <section class="product-page">
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
+                    <AppCard  v-for="(product,i) in products" :key="i" :element="product"/>
+                    <!-- <div class="col-4" v-for="product in products" :key="i">
                         <div class="product-item">
                             <div class="product-photo">
-                                <img src="../assets/img/1.webp" alt="Relaxed fit tee unisex">
+                                <img src='../assets/img/1.webp'  alt="Relaxed fit tee unisex">
                                 <div class="product-flags">
-                                    <span class="discount">-50%</span>
+                                    <span class="discount">{{product.badges[0].value}}</span>
                                     <span class="label">Sostenibilità</span>
                                 </div>   
                                 <div class="overlay">
@@ -29,14 +138,14 @@ export default {
                                 </span>
                             </div>
                             <div class="product-name">
-                                <p class="brand-name">Levi's</p>
-                                <h5>RELAXED FIT TEE UNISEX</h5>
-                                <span class="price">14,99 €</span>
-                                <span class="og-price"><del>29,99 €</del></span>
+                                <p class="brand-name">{{product.brand}}</p>
+                                <h5>{{product.name}}</h5>
+                                <span class="price">{{product.price}}</span>
+                                <span class="og-price"><del>{{product.price}}</del></span>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-4">
+                    </div> -->
+                    <!-- <div class="col-4"> 
                         <div class="product-item">
                             <div class="product-photo">
                                 <img src="../assets/img/2.webp" alt="ROSES TEE">
@@ -141,7 +250,7 @@ export default {
                                 <span class="price">29,99 €</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

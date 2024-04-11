@@ -26,7 +26,7 @@ export default {
             <div class="header-logo">
                 <img  src="../assets/img/boolean-logo.png" alt="Boolean logo">
             </div>
-                <div class="account">
+            <div class="account">
                 <a class="account-icons" href="#"><img src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/guest-male.png" alt=""></a>
                 <a class="account-icons" href="#"><img src="https://img.icons8.com/ios/50/FFFFFF/like--v1.png" alt=""></a>
                 <a class="account-icons" href="#"><img src="https://img.icons8.com/ios-filled/50/FFFFFF/shopping-bag.png" alt=""></a>
