@@ -14,10 +14,10 @@ export default {
 <div class="col-4">
     <div class="product-item">
         <div class="product-photo">
-            <img src='../assets/img/1.webp'  alt="Relaxed fit tee unisex">
+            <img src="../assets/img/1.webp" alt="Relaxed fit tee unisex">
             <div class="product-flags">
-                <span class="discount">{{element.badges[0].value}}</span>
-                <span class="label">Sostenibilità</span>
+                <span v-for="badge in element.badges" :class="badge.type">{{badge.value}}</span>
+                <!-- <span class="label">Sostenibilità</span> -->
             </div>   
             <div class="overlay">
                 <a href=""><img src="../assets/img/1b.webp" alt=""></a>
@@ -61,7 +61,7 @@ export default {
     padding: 5px 15px;
 }
 
-.discount, .label{
+.discount, .tag{
     padding: 3px 10px;
     color: white;
 }
@@ -70,7 +70,7 @@ export default {
     background-color: $red;
 }
 
-.label {
+.tag {
     background-color: $green;
 }
 
