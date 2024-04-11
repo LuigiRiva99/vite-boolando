@@ -5,7 +5,7 @@ export default {
         return {
 
         }
-    }
+    },
 }
 </script>
 
@@ -14,15 +14,15 @@ export default {
 <div class="col-4">
     <div class="product-item">
         <div class="product-photo">
-            <img src="../assets/img/1.webp" alt="Relaxed fit tee unisex">
-            <div class="product-flags">
+            <img  src="../assets/img/1.webp" alt="Relaxed fit tee unisex">
+            <div class="product-flags" >
                 <span v-for="badge in element.badges" :class="badge.type">{{badge.value}}</span>
                 <!-- <span class="label">Sostenibilità</span> -->
             </div>   
             <div class="overlay">
                 <a href=""><img src="../assets/img/1b.webp" alt=""></a>
             </div>
-            <span class="favourites">
+            <span class="favourites" :class="element.isInFavorites === true ? 'fav' : ''">
                 <a href="">&hearts;</a>
             </span>
         </div>
@@ -96,7 +96,7 @@ export default {
     opacity: 1;
 }
 
-.favourites:hover{
+.favourites:hover, .fav{
     color: $red;
 }
 
