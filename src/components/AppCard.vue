@@ -68,6 +68,7 @@ export default {
 
 .discount {
     background-color: $red;
+    order: -1;
 }
 
 .tag {

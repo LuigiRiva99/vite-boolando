@@ -1,13 +1,14 @@
 <script>
 import AppCard from './AppCard.vue'
-import cardProducts from '../assets/db.json'
+// import cardProducts from '../assets/db.json'
+import {store} from '../store.js'
 export default {
     components : {
         AppCard
     },
     data() {
         return {
-            cardProducts: cardProducts.products,
+            store: store.products,
         }
     }
 }
@@ -18,7 +19,7 @@ export default {
         <section class="product-page">
             <div class="container">
                 <div class="row">
-                    <AppCard  v-for="(product,i) in cardProducts" :key="i" :element="product"/>
+                    <AppCard  v-for="(product,i) in store" :key="i" :element="product"/>
                     <!-- <div class="col-4" v-for="product in products" :key="i">
                         <div class="product-item">
                             <div class="product-photo">
