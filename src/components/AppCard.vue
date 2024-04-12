@@ -6,6 +6,27 @@ export default {
 
         }
     },
+
+    methods : {
+        calculateDiscount() {
+            const discountedEl = this.element.badges.find((el) => el.type === 'discount')
+            if (discountedEl !== undefined) {
+                const discountNum = discountedEl.value.replace('-','').replace('%','')
+                const priceToDeduct = this.element.price * discountNum / 100
+                const finalPrice = this.element.price - priceToDeduct
+                return finalPrice.toFixed(2)
+            }
+        },
+
+        isDiscounted() {
+            const discountedEl = this.element.badges.find((el) => el.type === 'discount')
+            if (discountedEl !== undefined) {
+                return true
+            } else {
+                return false
+            }
+        }
+    },
 }
 </script>
 
@@ -14,13 +35,13 @@ export default {
 <div class="col-4">
     <div class="product-item">
         <div class="product-photo">
-            <img  :src="`../public/img/${element.frontImage}`" alt="Relaxed fit tee unisex">
+            <img  :src="`../img/${element.frontImage}`" alt="Relaxed fit tee unisex">
             <div class="product-flags" >
                 <span v-for="badge in element.badges" :class="badge.type">{{badge.value}}</span>
                 <!-- <span class="label">Sostenibilità</span> -->
             </div>   
             <div class="overlay">
-                <a href=""><img :src="`../public/img/${element.backImage}`" alt=""></a>
+                <a href=""><img :src="`../img/${element.backImage}`" alt=""></a>
             </div>
             <span class="favourites" :class="element.isInFavorites === true ? 'fav' : ''">
                 <a href="">&hearts;</a>
@@ -29,8 +50,8 @@ export default {
         <div class="product-name">
             <p class="brand-name">{{element.brand}}</p>
             <h5>{{element.name}}</h5>
-            <span class="price">{{element.price}}</span>
-            <span class="og-price"><del>{{element.price}}</del></span>
+            <span class="price">{{calculateDiscount()}} </span>
+            <span class='og-price' :class="isDiscounted() ? 'deleted' : ''">{{element.price}}</span>
         </div>
     </div>
 </div>
@@ -82,6 +103,10 @@ export default {
 
 .og-price {
     color: black;
+}
+
+.deleted{
+    text-decoration: line-through;
 }
 
 .overlay {

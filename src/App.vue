@@ -12,16 +12,16 @@ export default {
     AppMain
   },
 
-  data() {
-    return {
-      store 
-    }
-  },
+  // data() {
+  //   return {
+  //     store 
+  //   }
+  // },
 
   methods: {
     axiosCall() {
       axios.get('http://localhost:3000/products').then((res) => {
-        this.store.products = res.data
+        store.products = res.data
       })
     }
   },
