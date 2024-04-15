@@ -24,7 +24,7 @@ export default {
                 </li>
             </ul>
             <div class="header-logo">
-                <img  src="../assets/img/boolean-logo.png" alt="Boolean logo">
+                <img  src="/img/boolean-logo.png" alt="Boolean logo">
             </div>
             <div class="account">
                 <a class="account-icons" href="#"><img src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/guest-male.png" alt=""></a>

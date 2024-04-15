@@ -50,7 +50,7 @@ export default {
         <div class="product-name">
             <p class="brand-name">{{element.brand}}</p>
             <h5>{{element.name}}</h5>
-            <span class="price">{{calculateDiscount()}} </span>
+            <span :class="isDiscounted() ? 'price' : 'og-price'">&euro;{{calculateDiscount()}} </span>
             <span class='og-price' :class="isDiscounted() ? 'deleted' : ''">{{element.price}}</span>
         </div>
     </div>
